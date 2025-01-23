@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Senhas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Gerador de Senhas</h1>
+        <div>
+            <label for="length">Comprimento da senha:</label>
+            <input type="number" id="length" value="12" min="6" max="32">
+        </div>
+        <div>
+            <label>
+                <input type="checkbox" id="include-uppercase" checked>
+                Incluir letras maiúsculas
+            </label>
+            <label>
+                <input type="checkbox" id="include-numbers" checked>
+                Incluir números
+            </label>
+            <label>
+                <input type="checkbox" id="include-symbols" checked>
+                Incluir símbolos
+            </label>
+        </div>
+        <button id="generate-btn">Gerar Senha</button>
+        <div id="password" class="password-box" title="Clique para copiar"></div>
+    </div>
+
+    <!-- Modal de Alerta -->
+    <div class="modal" id="customAlert">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeAlert()">×</span>
+            <p id="alertMessage"></p>
+        </div>
+    </div>
+
+    <!-- Adicionando link para Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <footer class="footer">
+        <p>Desenvolvido por <strong>Hélcio Humberto</strong></p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/helciohumberto" target="_blank" class="social-icon">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://www.linkedin.com/in/helciohumberto" target="_blank" class="social-icon">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://github.com/helciohumberto" target="_blank" class="social-icon">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        // Função para exibir o alerta customizado
+        function showCustomAlert(message) {
+            const alertMessage = document.getElementById('alertMessage');
+            alertMessage.textContent = message;
+            const alertBox = document.getElementById('customAlert');
+            alertBox.style.display = 'block';
+        }
+
+        // Função para fechar o alerta
+        function closeAlert() {
+            const alertBox = document.getElementById('customAlert');
+            alertBox.style.display = 'none';
+        }
+    </script>
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
